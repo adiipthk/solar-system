@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System with Planet Names</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #001f3d;  /* Dark blue background */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Starry background */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            z-index: -1;
+            animation: moveStars 50s linear infinite;
+        }
+
+        /* Animating stars */
+        @keyframes moveStars {
+            0% { background-position: 0 0; }
+            100% { background-position: -5000px 5000px; }
+        }
+
+        /* The Sun */
+        .sun {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 204, 0, 0.8);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Orbit Container */
+        .orbit-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Orbit path of planets */
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        /* Planets */
+        .planet {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #4d94ff;
+            border-radius: 50%;
+            transform-origin: 50% 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 10px;
+            text-align: center;
+            padding: 2px;
+        }
+
+        /* Planet Colors */
+        .planet1 { background-color: #a3a3a3; } /* Mercury */
+        .planet2 { background-color: #ff4d4d; } /* Venus */
+        .planet3 { background-color: #99ff99; } /* Earth */
+        .planet4 { background-color: #ffb84d; } /* Mars */
+        .planet5 { background-color: #8080ff; } /* Jupiter */
+        .planet6 { background-color: #ff66cc; } /* Saturn */
+        .planet7 { background-color: #66ccff; } /* Uranus */
+        .planet8 { background-color: #6666ff; } /* Neptune */
+
+        /* Planet Orbits with Distances and Speeds */
+        .planet1-orbit { width: 180px; height: 180px; animation: orbit1 8s linear infinite; }
+        .planet2-orbit { width: 250px; height: 250px; animation: orbit2 12s linear infinite; }
+        .planet3-orbit { width: 320px; height: 320px; animation: orbit3 18s linear infinite; }
+        .planet4-orbit { width: 400px; height: 400px; animation: orbit4 24s linear infinite; }
+        .planet5-orbit { width: 480px; height: 480px; animation: orbit5 30s linear infinite; }
+        .planet6-orbit { width: 560px; height: 560px; animation: orbit6 36s linear infinite; }
+        .planet7-orbit { width: 640px; height: 640px; animation: orbit7 48s linear infinite; }
+        .planet8-orbit { width: 720px; height: 720px; animation: orbit8 60s linear infinite; }
+
+        /* Planet name styling */
+        .planet-name {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        /* Planet orbit animations */
+        @keyframes orbit1 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit2 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit3 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit4 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit5 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit6 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit7 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes orbit8 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <!-- Starry Background -->
+    <div class="stars"></div>
+
+    <!-- The Sun -->
+    <div class="sun">
+        Sun
+    </div>
+
+    <!-- Orbit Container for Planets -->
+    <div class="orbit-container">
+        <!-- Orbits and Planets with Names -->
+        <div class="orbit planet1-orbit">
+            <div class="planet planet1">
+                <span class="planet-name">Mercury</span>
+            </div>
+        </div>
+
+        <div class="orbit planet2-orbit">
+            <div class="planet planet2">
+                <span class="planet-name">Venus</span>
+            </div>
+        </div>
+
+        <div class="orbit planet3-orbit">
+            <div class="planet planet3">
+                <span class="planet-name">Earth</span>
+            </div>
+        </div>
+
+        <div class="orbit planet4-orbit">
+            <div class="planet planet4">
+                <span class="planet-name">Mars</span>
+            </div>
+        </div>
+
+        <div class="orbit planet5-orbit">
+            <div class="planet planet5">
+                <span class="planet-name">Jupiter</span>
+            </div>
+        </div>
+
+        <div class="orbit planet6-orbit">
+            <div class="planet planet6">
+                <span class="planet-name">Saturn</span>
+            </div>
+        </div>
+
+        <div class="orbit planet7-orbit">
+            <div class="planet planet7">
+                <span class="planet-name">Uranus</span>
+            </div>
+        </div>
+
+        <div class="orbit planet8-orbit">
+            <div class="planet planet8">
+                <span class="planet-name">Neptune</span>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+   
